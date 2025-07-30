@@ -39,7 +39,9 @@ export default function RootLayout({
     <html lang="pt-br">
       <body className={`${roboto.variable} ${fjallaOne.variable}`}>
         <header>
-          <h1>PetShop</h1>
+          <h1>
+            <Link href="/">PetShop</Link>
+          </h1>
           <nav>
             <Link href="/">Blog</Link>
             <Link href="/produtos">Produtos</Link>
@@ -47,7 +49,7 @@ export default function RootLayout({
             <Link href="/contato">Contsto</Link>
           </nav>
         </header>
-        {children}
+        <main className="limitador">{children}</main>
       </body>
     </html>
   );
