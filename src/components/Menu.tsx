@@ -6,7 +6,7 @@ export default function Menu() {
       <Link href="/">Blog</Link>
       <Link href="/produtos">Produtos</Link>
       <Link href="/sobre">Sobre</Link>
-      <Link href="/contato">Contsto</Link>
+      <Link href="/contato">Contato</Link>
     </nav>
   );
 }
