@@ -2,6 +2,10 @@
 
 Projeto de uma aplicação web SPA usando Next.js, TypeScript e Supabase (Baas - Back-end as a Service)
 
+## 02_paginas-basicas-links-ajustes-de-layout-metadados
+
+---
+
 ## 01_css-global-fonts-fivicon-metadados
 
 - Adição de estilos globais
