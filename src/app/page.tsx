@@ -1,3 +1,8 @@
 export default function Home() {
-  return <p>Conteúdo do Petshop...</p>;
+  return (
+    <section>
+      <h2>Pet Notícias</h2>
+      <p>Conteúdo do Petshop...</p>
+    </section>
+  );
 }
