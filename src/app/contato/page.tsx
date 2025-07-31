@@ -1,5 +1,6 @@
 //src/app/contato/page.tsx
 import { Metadata } from "next";
+import styles from "./contato.module.css";
 
 export const metadata: Metadata = {
   title: "Contato | PetShop",
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function Contato() {
   return (
-    <section>
+    <section className={styles.conteudo}>
       <h2>Contato</h2>
       <p></p>
     </section>
