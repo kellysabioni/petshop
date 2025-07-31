@@ -1,13 +1,22 @@
 import Link from "next/link";
 import Menu from "./Menu";
 import styles from "./Cabecalho.module.css";
+import Image from "next/image";
 
 export default function Cabecalho() {
   return (
     <header className={styles.topo}>
       <div className="limitador">
         <h1>
-          <Link href="/">PetShop</Link>
+          <Link href="/">
+            <Image
+              src="/images/logo.png"
+              alt="Patinha dentro de um coração rosa"
+              width={48}
+              height={48}
+            />
+            PetShop
+          </Link>
         </h1>
         <Menu />
       </div>
