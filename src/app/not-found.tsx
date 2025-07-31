@@ -22,8 +22,8 @@ export default function NotFound() {
         />
       </div>
 
-      <p>
-        <Link href="/">Voltar para Página Inicial </Link>
+      <p className={styles.inicial}>
+        <Link href="/">Página Inicial</Link>
       </p>
     </section>
   );
