@@ -1,8 +1,9 @@
 import Link from "next/link";
+import styles from "./Menu.module.css";
 
 export default function Menu() {
   return (
-    <nav>
+    <nav className={styles.menu}>
       <Link href="/">Blog</Link>
       <Link href="/produtos">Produtos</Link>
       <Link href="/sobre">Sobre</Link>
