@@ -5,10 +5,12 @@ import styles from "./Cabecalho.module.css";
 export default function Cabecalho() {
   return (
     <header className={styles.topo}>
-      <h1>
-        <Link href="/">PetShop</Link>
-      </h1>
-      <Menu />
+      <div className="limitador">
+        <h1>
+          <Link href="/">PetShop</Link>
+        </h1>
+        <Menu />
+      </div>
     </header>
   );
 }
