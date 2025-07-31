@@ -1,5 +1,6 @@
 //src/app/produtos/page.tsx
 import { Metadata } from "next";
+import styles from "./produtos.module.css";
 
 export const metadata: Metadata = {
   title: "Produtos | PetShop",
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function Produtos() {
   return (
-    <section>
+    <section className={styles.conteudo}>
       <h2>Produtos</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum ullam ea
