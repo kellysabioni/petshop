@@ -1,5 +1,6 @@
 //src/app/not-found.tsx
 import { Metadata } from "next";
+import styles from "./not-found.module.css";
 
 export const metadata: Metadata = {
   title: "Página não encontrada | PetShop",
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 };
 export default function NotFound() {
   return (
-    <section>
+    <section className={styles.conteudo}>
       <h2>Ops! Página não encontrada...</h2>
     </section>
   );
