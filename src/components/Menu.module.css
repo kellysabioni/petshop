@@ -27,7 +27,8 @@
   }
 
   a.ativo {
-    background-color: black;
+    background-color: #fa6f8f;
+    color: #f3f1ec;
   }
 
   @media screen and (min-width: 700px) {
