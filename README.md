@@ -2,6 +2,14 @@
 
 Projeto de uma aplicação web SPA usando Next.js, TypeScript e Supabase (Baas - Back-end as a Service)
 
+## 05_home-com-lista-de-posts-a-partir-de-um-array
+- Configuração e exportação de um novo tipo `Post.ts`
+- Adição de um array de dados: `array-posts.ts`
+- Componente `ListaPosts.tsx` com prop `posts`
+- Utilização do `map` para renderizar os <article> com o conteúdo dinâmico de cada post
+
+---
+
 ## 04_melhorias-nas-paginas-e-componentes-container
 
 - Adição de conteúdo às pages (Sobre, Produtos, COntato)
@@ -47,3 +55,5 @@ Ajustes e exclusões de elementos da instalação padrão do Next.js
 - `src/app/page.tsx`: página principal (index, Home). **Obs.:** o nome do arquivo **precisa ser** `page.tsx`, mas o nome interno (na função) pode ser qualquer um.
 
 - `src/app/layout.tsx`: componente/arquivo especial que define a estrutura padrão (layout) para todas as páginas.
+
+---
