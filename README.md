@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PetShop
 
-## Getting Started
+Projeto de uma aplicação web SPA usando Next.js, TypeScript e Supabase (Baas - Back-end as a Service)
 
-First, run the development server:
+## 04_melhorias-nas-paginas-e-componentes-container
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 03_componentes-cabecalho-menu-e-modulos-de-estilo
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Criação de componentes `Cabecalho` e `Menu`
+- Definição de link ativo no menu utilizando o hook `usePathname`
+- Ativação a renderização de componente em modo cliente com `'use client'`
+- Importação e aplicação de módulos CSS
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 02_paginas-basicas-links-ajustes-de-layout-metadados
 
-To learn more about Next.js, take a look at the following resources:
+- Criação das páginas/rotas (usando pastas e arquivo page)
+- Definição de metadados específicos para cada página
+- Adição do componente `<Link>` para a navegação entre as rotas
+- Ajustes diversos de estrutura HTML
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 01_css-global-fonts-fivicon-metadados
 
-## Deploy on Vercel
+- Adição de estilos globais
+- Importação, configuração e aplicação de fonts da web usando `next/fonts`
+- Adição de mais metadados
+- Aplicação automática de favicon adicionando arquivo `icon.png` direto na pasta `app`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 00_projeto-zerado
+
+Ajustes e exclusões de elementos da instalação padrão do Next.js
+
+### Revisando tópicos importantes
+
+- `src/app/page.tsx`: página principal (index, Home). **Obs.:** o nome do arquivo **precisa ser** `page.tsx`, mas o nome interno (na função) pode ser qualquer um.
+
+- `src/app/layout.tsx`: componente/arquivo especial que define a estrutura padrão (layout) para todas as páginas.
