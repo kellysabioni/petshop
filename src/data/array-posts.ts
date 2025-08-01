@@ -1,5 +1,6 @@
+import type { Post } from "../types/Post";
 
-const arrayPosts = [
+const arrayPosts: Post[] = [
   {
     id: 1,
 
