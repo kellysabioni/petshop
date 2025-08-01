@@ -1,7 +1,13 @@
 // src/components/ListaPosts.tsx
+import { Post } from "@/types/Post";
 import styles from "./ListaPosts.module.css";
 
-export default function ListaPosts() {
+/* Confirgurando um tipo para este componente e, neste tipo, definimos a prop posts relacionando ela ao tipo Post criado anteriormente  */
+type ListaPostsProps = {
+    posts: Post[];
+}
+
+export default function ListaPosts({posts}: ListaPostsProps) {
   return <div className={styles.posts} >
     <article>
         <h3>Titulo do post</h3>
