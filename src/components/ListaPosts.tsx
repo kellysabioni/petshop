@@ -10,14 +10,12 @@ type ListaPostsProps = {
 export default function ListaPosts({ posts }: ListaPostsProps) {
   return (
     <div className={styles.posts}>
-      {posts.map((post) => {
-        return (
-          <article key={post.id}>
-            <h3>{post.titulo}</h3>
-            <p>{post.subtitulo}</p>
-          </article>
-        );
-      })}
+      {posts.map(({ id, titulo, subtitulo }) => (
+        <article key={id}>
+          <h3>{titulo}</h3>
+          <p>{subtitulo}</p>
+        </article>
+      ))}
     </div>
   );
 }
