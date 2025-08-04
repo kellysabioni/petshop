@@ -3,9 +3,7 @@ import Container from "@/components/Container";
 import styles from "./detalhe-post.module.css";
 import { Post } from "@/types/Post";
 
-type DetalhePostProps = {
-  params: Promise<{ id: string }>;
-};
+type DetalhePostProps = { params: Promise<{ id: string }> };
 
 /* A função abaixo precisa:
 - Receber o ID
@@ -16,11 +14,9 @@ async function buscarPostPorId(id: string): Promise<Post> {
   const resposta = await fetch(`http://localhost:2112/posts/${id}`, {
     next: { revalidate: 0 },
   });
-
   if (!resposta.ok) {
     throw new Error("Erro ao buscar o post: " + resposta.statusText);
   }
-
   const post: Post = await resposta.json();
   return post;
 }
@@ -28,7 +24,6 @@ async function buscarPostPorId(id: string): Promise<Post> {
 export async function generateMetadata({ params }: DetalhePostProps) {
   const { id } = await params;
   const post = await buscarPostPorId(id);
-
   return {
     title: post.titulo + " | PetShop",
     description: post.descricao,
@@ -38,7 +33,6 @@ export async function generateMetadata({ params }: DetalhePostProps) {
 export default async function DetalhePost({ params }: DetalhePostProps) {
   const { id } = await params;
   const post = await buscarPostPorId(id);
-
   return (
     <article className={styles.conteudo}>
       <h2>{post.titulo}</h2>
