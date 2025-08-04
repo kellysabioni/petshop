@@ -22,7 +22,7 @@ export default async function Home() {
       <h2>Pet Notícias</h2>
       <p>Aqui voce encontra as últimas notícias sobre Pets.</p>
 
-      <ListaPosts posts={arrayPosts} />
+      <ListaPosts posts={posts} />
     </section>
   );
 }
