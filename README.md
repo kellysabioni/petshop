@@ -2,6 +2,11 @@
 
 Projeto de uma aplicação web SPA usando Next.js, TypeScript e Supabase (Baas - Back-end as a Service)
 
+## 07_componentes-SemPosts-e-notFound-da-rota-de-posts
+
+- Criação do componente `SemPosts` e aplicação e renderização condicional na page `Home`
+- Criação da page `not-found.tsx` e aplicação na rota dinâmica de posts usando verificação de erro status 404 e chamada da função nativa `notFound()`.
+
 ## 06_fake-api-usando-json-server-e-aplicando-rota-dinamica
 
 - Instalação e configuração do `json-server` como dependencia de desenvolvedor
