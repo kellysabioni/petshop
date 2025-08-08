@@ -2,7 +2,37 @@
 
 Projeto de uma aplicação web SPA usando Next.js, TypeScript e Supabase (Baas - Back-end as a Service)
 
+## 06_fake-api-usando-json-server-e-aplicando-rota-dinamica
+
+- Instalação e configuração do `json-server` como dependencia de desenvolvedor
+  - Para instalar: `npm install json-server --save-dev`
+- Incluir no arquivo package.json > scripts (comando para acessar api através do npm run api, como se fosse um atalho, para não precisar acessar escrevendo este comando inteiro)
+  > `"api": "json-server --watch db.json --port 2112 --host 0.0.0.0"`
+- Exclusão do arquivo de array
+- Utilização do `fetch` com `async/await` na página Home para consumir os posts da fake-api
+- Substituição do array fixo de posts por dados da fake-api
+- Configuração de rota dinâmica com carregamento de dados a partir de parâmetros da rota
+- Uso de `Promise` como tipo para a prop `params`
+- Geração de metadados dinâmicos usando a função `generateMetadata`
+- Refatoração da programação de busca de dados na fake-api usando uma função dedicada (`buscarPostPorId`)
+
+---
+
+## 05_home-com-lista-de-posts-a-partir-de-um-array
+
+- Configuração e exportação de um novo tipo `Post.ts`
+- Adição de um array de dados: `array-posts.ts`
+- Componente `ListaPosts.tsx` com prop `posts`
+- Utilização do `map` para renderizar os <article> com o conteúdo dinâmico de cada post
+
+---
+
 ## 04_melhorias-nas-paginas-e-componentes-container
+
+- Adição de conteúdo às pages (Sobre, Produtos, COntato)
+- Utilização de imagem SVG na page Not Found
+- Criação e aplicação do componente Container usando children
+- Desativação do compilador Turbopack para evitar bugs de cache (em especial quanta a alguns módulos CSS)
 
 ---
 
@@ -42,3 +72,5 @@ Ajustes e exclusões de elementos da instalação padrão do Next.js
 - `src/app/page.tsx`: página principal (index, Home). **Obs.:** o nome do arquivo **precisa ser** `page.tsx`, mas o nome interno (na função) pode ser qualquer um.
 
 - `src/app/layout.tsx`: componente/arquivo especial que define a estrutura padrão (layout) para todas as páginas.
+
+---
