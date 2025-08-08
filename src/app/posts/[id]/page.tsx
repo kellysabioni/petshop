@@ -2,6 +2,7 @@
 import Container from "@/components/Container";
 import styles from "./detalhe-post.module.css";
 import { Post } from "@/types/Post";
+import { notFound } from "next/navigation";
 
 type DetalhePostProps = { params: Promise<{ id: string }> };
 
@@ -14,6 +15,11 @@ async function buscarPostPorId(id: string): Promise<Post> {
   const resposta = await fetch(`http://localhost:2112/posts/${id}`, {
     next: { revalidate: 0 },
   });
+
+  if (resposta.status === 404) {
+    notFound();
+  }
+
   if (!resposta.ok) {
     throw new Error("Erro ao buscar o post: " + resposta.statusText);
   }
