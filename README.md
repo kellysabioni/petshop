@@ -2,6 +2,11 @@
 
 Projeto de uma aplicação web SPA usando Next.js, TypeScript e Supabase (Baas - Back-end as a Service)
 
+## 09_migrando-api-para-supabase
+
+Comando para instalar dependencias para usar o SUPABASE
+> npm install @supabase/supabase-js
+
 ## 08_filtro-de-categorias
 
 ### Resumo do ciclo de comunicação da prop que passa uma função do pai (ListaPosts) para o filho (FiltroCategorias)
