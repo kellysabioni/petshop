@@ -3,7 +3,7 @@
 "use client";
 
 import { Post } from "@/types/Post";
-import estilos from "./ListaPosts.module.css";
+import styles from "./ListaPosts.module.css";
 import Link from "next/link";
 import FiltroCategorias from "./FiltroCategorias";
 import { useState } from "react";
@@ -40,7 +40,7 @@ export default function ListaPosts({ posts }: ListaPostsProps) {
       {/* Caso não tenha posts, renderiza SemPosts */}
       {postsFiltrados.length === 0 && <SemPosts />}
 
-      <div className={estilos.posts}>
+      <div className={styles.posts}>
         {postsFiltrados.map(({ id, titulo, subtitulo }) => (
           <article key={id}>
             <Link href={`/posts/${id}`}>
