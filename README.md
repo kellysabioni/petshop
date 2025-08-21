@@ -4,8 +4,31 @@ Projeto de uma aplicação web SPA usando Next.js, TypeScript e Supabase (Baas -
 
 ## 09_migrando-api-para-supabase
 
-Comando para instalar dependencias para usar o SUPABASE
-> npm install @supabase/supabase-js
+- Cadastro no Supabase usando o GitHub
+- Criação e configuração de um projeto dento do Supabase
+- Criação da tabela `posts` com os campos: 
+  - id (uuid), pk
+  - titulo (text), not null
+  - subtitulo (text), not null
+  - descricao (text), not null
+  - categoria (text), not null
+- Importação dos dados para a tabela usando o formato `csv`
+- Adição de uma política de segurança para `SELECT` público
+
+### No porjeto PetShop (VSCode)
+
+- Instalação da lib do Supabase (Comando para instalação)
+  > npm install @supabase/supabase-js
+- Criação do arquivo contendo variáveis de ambiente `.env.local`, com a aplicação das variáveis `NEXT_PUBLIC_SUPABASE_URL` e `NEXT_PUBLIC_SUPABASE_ANON_KEY`. Obs.: o conteúdo para este arquivo está pronto em sua conta no Supabase, dentro do botão **CONNECT**
+- Criação da pasta `lib` e do arquivo `supabase.ts`
+
+#### Páginas Home (app/page.tsx) e DetalhePost (app/posts/[id])/page.tsx)
+
+- Substituição da função `fetch` e do acesso à fake-api pela função e recursos do supabase
+- Ajustes nas verificações de erro
+- Criação de um componente especial de `loading` (exibido enquanto o processamento dos posts está acontecendo)
+
+---
 
 ## 08_filtro-de-categorias
 
@@ -22,6 +45,7 @@ Em resumo, o filho **não muda o estado sozinho**. Ele só **avisa** o pai.
 
 Quem tem o estado, tem o controle. (Elemento pai, que neste caso é o ListaPosts)
 
+---
 
 ## 07_componentes-SemPosts-e-notFound-da-rota-de-posts
 
