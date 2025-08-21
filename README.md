@@ -2,6 +2,66 @@
 
 Projeto de uma aplicação web SPA usando Next.js, TypeScript e Supabase (Baas - Back-end as a Service)
 
+## 10_rotinas-do-formulario-de-contato
+
+- Criação do componente `Formulario` e importação a página de Contato
+- Programação de uma **ação de servidor (server action)**: `lib/enviar-contato.ts`
+  - É uma função que executa no back-end, por isso, a diretiva `'use server'`
+  - Responsável por receber, validar e enviar os dados para o Supabase
+- Gerenciamento de `state` do `Formulario` e do `BotaoEnviar` visando melhorar a experiência do usuário demonstrando o status do processamento através de mensagens e estilos personalizados.
+
+---
+
+## 09_migrando-api-para-supabase
+
+- Cadastro no Supabase usando o GitHub
+- Criação e configuração de um projeto dento do Supabase
+- Criação da tabela `posts` com os campos: 
+  - id (uuid), pk
+  - titulo (text), not null
+  - subtitulo (text), not null
+  - descricao (text), not null
+  - categoria (text), not null
+- Importação dos dados para a tabela usando o formato `csv`
+- Adição de uma política de segurança para `SELECT` público
+
+### No porjeto PetShop (VSCode)
+
+- Instalação da lib do Supabase (Comando para instalação)
+  > npm install @supabase/supabase-js
+- Criação do arquivo contendo variáveis de ambiente `.env.local`, com a aplicação das variáveis `NEXT_PUBLIC_SUPABASE_URL` e `NEXT_PUBLIC_SUPABASE_ANON_KEY`. Obs.: o conteúdo para este arquivo está pronto em sua conta no Supabase, dentro do botão **CONNECT**
+- Criação da pasta `lib` e do arquivo `supabase.ts`
+
+#### Páginas Home (app/page.tsx) e DetalhePost (app/posts/[id])/page.tsx)
+
+- Substituição da função `fetch` e do acesso à fake-api pela função e recursos do supabase
+- Ajustes nas verificações de erro
+- Criação de um componente especial de `loading` (exibido enquanto o processamento dos posts está acontecendo)
+
+---
+
+## 08_filtro-de-categorias
+
+### Resumo do ciclo de comunicação da prop que passa uma função do pai (ListaPosts) para o filho (FiltroCategorias)
+
+- Usuário clica em um botão do FiltroCategorias (Filho)
+- Esse clique (`onClick`) "chama" a prop `aoSelecionar` passando pra ela a categoria escolhida (por exemplo, 'bem-estar')
+- O `aoSelecionar` na verdade é um apontamento para o `setCategoriaAtiva` definida no pai (ListaPosts)
+- O React/Next atualiza o estado (state `CategoriaAtiva`) do pai 
+- O pai (ListaPosts) reexecuta com o novo estado, exibindo os posts conforme a categoria ativa
+- O `postsFiltrados` é atualizado e os posts filtrados aparecem
+
+Em resumo, o filho **não muda o estado sozinho**. Ele só **avisa** o pai.
+
+Quem tem o estado, tem o controle. (Elemento pai, que neste caso é o ListaPosts)
+
+---
+
+## 07_componentes-SemPosts-e-notFound-da-rota-de-posts
+
+- Criação do componente `SemPosts` e aplicação e renderização condicional na page `Home`
+- Criação da page `not-found.tsx` e aplicação na rota dinâmica de posts usando verificação de erro status 404 e chamada da função nativa `notFound()`.
+
 ## 06_fake-api-usando-json-server-e-aplicando-rota-dinamica
 
 - Instalação e configuração do `json-server` como dependencia de desenvolvedor

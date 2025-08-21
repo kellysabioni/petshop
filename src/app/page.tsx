@@ -2,26 +2,22 @@
 import ListaPosts from "@/components/ListaPosts";
 import styles from "./page.module.css";
 import { Post } from "@/types/Post";
+import SemPosts from "@/components/SemPosts";
+import { supabase } from "@/lib/supabase";
 
 export default async function Home() {
-  const resposta = await fetch(`http://localhost:2112/posts`, {
-    /* Revalidamos o cache do next a cada requisição para garantir que os dados estejam sempre atualizados */
-    next: { revalidate: 0 },
-  });
+  const { data, error } = await supabase.from("posts").select("*");
 
-  if (!resposta.ok) {
-    throw new Error("Erro ao buscar os posts: " + resposta.statusText);
+  if (error) {
+    throw new Error("Erro ao buscar os posts: " + error.message);
   }
-
-  const posts: Post[] = await resposta.json();
-  console.log(posts);
+  const posts: Post[] = data;
 
   return (
     <section className={styles.conteudo}>
       <h2>Pet Notícias</h2>
-      <p>Aqui voce encontra as últimas notícias sobre Pets.</p>
 
-      <ListaPosts posts={posts} />
+      {posts.length === 0 ? <SemPosts /> : <ListaPosts posts={posts} />}
     </section>
   );
 }

@@ -2,22 +2,28 @@
 import Container from "@/components/Container";
 import styles from "./detalhe-post.module.css";
 import { Post } from "@/types/Post";
+import { notFound } from "next/navigation";
+import { supabase } from "@/lib/supabase";
 
 type DetalhePostProps = { params: Promise<{ id: string }> };
 
-/* A função abaixo precisa:
-- Receber o ID
-- Executar o acesso a API usando o ID como string e retornar o post com os dados
-- O retorno da função DEVE SER uma Promise
-- Não se esqueça de chamar/usar esta nova função dentro do generateMetadata e do DetalhePost no lugar do código que você irá remover */
 async function buscarPostPorId(id: string): Promise<Post> {
-  const resposta = await fetch(`http://localhost:2112/posts/${id}`, {
-    next: { revalidate: 0 },
-  });
-  if (!resposta.ok) {
-    throw new Error("Erro ao buscar o post: " + resposta.statusText);
+  const { data, error } = await supabase
+    .from("posts")
+    .select("*")
+    .eq("id", id)
+    .single<Post>();
+
+  /* Esse PGRST116 é um código interno da API Postgre usado pelo Supabase.
+    Na prática, indica que se a query single não retornar nenhum item, ou seja, zero resultados, ele dispara esse código e com isso chamamos a função notFound (que por sua vez carrega a page not-found.tsx) */
+  if (error?.code === "PGRST116") {
+    notFound();
   }
-  const post: Post = await resposta.json();
+  if (error) {
+    throw new Error("Erro ao buscar post: " + error.message);
+  }
+
+  const post: Post = data;
   return post;
 }
 
