@@ -49,6 +49,7 @@ export default function Formulario() {
           name="nome"
           id="nome"
           placeholder="Digite o nome completo"
+          required
         />
       </div>
       <div className={styles.campo}>
@@ -58,6 +59,7 @@ export default function Formulario() {
           name="email"
           id="email"
           placeholder="Informe um e-mail válido"
+          required
         />
       </div>
       <div className={styles.campo}>
@@ -67,6 +69,7 @@ export default function Formulario() {
           id="mensagem"
           rows={5}
           placeholder="Escreva sua mensagem aqui "
+          required
         ></textarea>
       </div>
       <div className={styles.campo}>
