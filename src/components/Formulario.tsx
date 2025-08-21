@@ -72,6 +72,12 @@ export default function Formulario() {
       <div className={styles.campo}>
         <BotaoEnviar />
       </div>
+
+      {mensagem && (
+        <p className={` ${styles.mensagem} ${styles[tipoMensagem]} `}>
+          {mensagem}
+        </p>
+      )}
     </form>
   );
 }
