@@ -2,6 +2,14 @@
 
 Projeto de uma aplicação web SPA usando Next.js, TypeScript e Supabase (Baas - Back-end as a Service)
 
+## 11_configurando-como-pwa
+
+Site de referência para estudar mais 
+
+Site lib pwa
+> https://www.npmjs.com/package/@ducanh2912/next-pwa
+
+
 ## 10_rotinas-do-formulario-de-contato
 
 - Criação do componente `Formulario` e importação a página de Contato
