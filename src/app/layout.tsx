@@ -28,6 +28,13 @@ export const metadata: Metadata = {
       url: "https://github.com/kellysabioni?tab=repositories",
     },
   ],
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "petshop",
+    /* Se tivéssemos ícones específicos para dispositivos Apple, vc também colocaria aqui */
+  },
 };
 
 export default function RootLayout({
